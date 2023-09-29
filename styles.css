@@ -1,0 +1,547 @@
+body {
+    height: 100vh;
+    background-color: #111111;
+    font-size: 1em;
+    font-family: 'Circular Book', sans-serif;
+    color: white;
+}
+
+img:hover, span:hover {
+    cursor:pointer;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 90px;
+    padding-left: 135px;
+    padding-right: 135px;
+    font-family: 'Circular Book', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+header nav div {
+    display: flex;
+    align-items: center;
+}
+
+/* Animate label to appear then disappear */
+header nav label {
+    opacity: 0;
+    animation: appear 4s ease-out;
+	animation-delay: 3s;
+}
+
+@keyframes appear {
+    50% { opacity: 100%; }
+    100% { opacity: 0; }
+}
+
+/* Space between red box and label, 'Work' and grater than sign */
+header nav div label, header nav span {
+    margin-left: 10px;
+}
+
+#red-box img{
+    width: 30px;
+    height: 30px;
+}
+
+main {
+    padding: 0 50px 0;
+}
+
+.intro {
+    font-family: 'YoungSerifRegular';
+    font-size: 4.8vw;
+    color: white;
+    letter-spacing: -1px;
+    margin: 110px 82px 10px;
+}
+
+/* Reduce the spacing between the two lines of the intro */
+h1 div:nth-child(2) {
+    margin-top: -37px;
+}
+
+/* Animation to have intro text fade in */
+h1 div span {
+    opacity: 0;
+    animation: fadeIn 2s ease-in;    
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn  {
+      0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.textfade1 {
+    display: block;
+    background-color: blue;
+}
+
+#introGIF {
+    width: 100%;
+    height: 100%;
+}
+
+#introGIF img {
+    max-width:100%;
+    max-height: 100%;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#introGIF:hover img {
+    transform: scale(0.97);
+}
+
+.textbody {
+    display: block;
+    margin: 120px 90px 0;
+    letter-spacing: -1px;
+}
+
+.textbody h2 {
+    font-size: 4.4vw;
+    line-height: 5.4vw;
+}
+
+.textbody p {
+    font-size: 2.5vw;
+    line-height: 3.9vw;
+    margin-bottom: 5vw;
+}
+
+.clients {
+    display: flex;  
+    justify-content: space-around;  
+}
+
+ul {
+    font-size: 22px;
+    list-style-type: none;
+    line-height: 3.2vw;
+}
+
+ul span {
+    font-size: 18px;
+    color: #858585;
+}
+
+ul:nth-child(2) {
+    margin-right: -120px;    
+}
+
+/* Dividing line between clients list and everything else */
+hr {
+    border: 0.5px solid hsla(0,0%,94.1%,.1);
+    margin: 50px 90px 50px;
+}
+
+/* Relative position to allow right side items to stick to its bottom for alignment purposes */
+footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 140px 157px;
+}
+
+/* Footer's left side objects plus interactivity */ 
+.left {
+    font-size: 58px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.left span:nth-child(3) {
+    color: #e31f3c;
+}
+
+.left:hover body:not(:hover) {
+    filter: blur(4px);
+  }
+
+/* Footer's right side objects */
+.right {
+    position: absolute;
+    text-align: right;
+    right: 0;
+    bottom: 0;
+    line-height: 2.3;
+}
+
+/* Nugs. styling */
+.right span:first-of-type {
+    font-family: 'Georgia';
+    letter-spacing: 0px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.right span:first-of-type:hover {
+    color:#80786c;
+    transition: all 0.3s ease-in;
+}
+
+/* Styling for social media icons in footer */
+.right img:nth-child(n+2):nth-child(-n+5) {
+    margin-left: 27px; 
+    background-color: #80786c;      
+}
+
+/* Styling for city names in footer */
+.right span:nth-child(n+6):nth-child(-n+9) {
+    color:#858585;
+    font-size: large;
+    margin-left: 30px;
+}
+
+/* Make sure footer icons are at an aesthetic but still accessible height */
+footer div img {
+    width: 23px;
+}
+
+/* Change image of icons when hovered, simulating a color change for SVG objects */
+/* Note to self: Gotta learn SVG! */
+/* Opacity to recreate a 'smooth' transition */
+.right img:first-of-type:hover {
+    content: url('./assets/hover-plus.png');
+    opacity: 0.5;
+    transition: all 0.2s linear;
+}
+
+.right img:nth-child(3):hover {
+    content: url('./assets/hover-insta.jpg');
+    opacity: 0.5;
+    transition: all 0.3s linear;
+}
+
+.right img:nth-child(4):hover {
+    content: url('./assets/hover-twit.png');
+    opacity: 0.5;
+    transition: all 0.3s linear;
+}
+
+.right img:nth-child(5):hover {
+    content: url('./assets/hover-linkn.png');
+    opacity: 0.5;
+    transition: all 0.3s linear;
+}
+
+
+/* Wrapper to partially hide bottom popup */
+#hidden {
+    position: relative;
+    height: 75px;
+    overflow: hidden;
+}
+
+#popup {
+    position: absolute;
+    overflow: hidden;
+    margin: 0 40px;
+    transform: translateY(30px);
+    transition: transform .5s ease;
+}
+
+#popup:hover {
+    transform: translateY(10px);
+}
+
+#popup img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    filter: blur(3px);
+    transition: all .5s ease;
+}
+
+#popup:hover img {
+    filter: blur(0);
+    transform: scale(1.1);
+}
+
+/* Bottom pop-up box text links */
+#popup nav ul {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 5px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 23px;
+}
+
+/* Bring nav links closer to each other */
+#popup nav ul li:nth-child(1) {
+    margin-left: 90px;
+}
+
+#popup nav ul li:nth-child(2) {
+    margin-right: 90px;
+    font-size: 19px;
+}
+
+/* Text slides up when user scrolls down the page */
+.slideUP {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+/* Class list 'active' generated by javascript function */
+.slideUP.active {
+    transform: translateY(0px);
+    opacity: 1;   
+}
+
+/* Client lists slides in from the left */
+.slideways {
+    position: relative;
+    transform: translateX(-70px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.slideways.active2 {
+    transform: translateX(0px);
+    opacity: 1;   
+}
+
+
+
+/* Section for responsive design */
+@media (max-width: 1000px) {
+    header nav {
+        flex-basis: 1;
+        padding: 64px 42px 0;
+        font-size: 20px;
+    }
+
+    main, body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .intro {
+        font-size: 45px;
+        letter-spacing: 1px;
+        margin: 178px 40px 10px;
+    }
+    
+    h1 div:nth-child(2) {
+        margin-top: -28px;
+    }
+
+    .textbody {
+        margin: 100px 50px 0;
+    }
+
+    .textbody h2 {
+        font-size: 4.7vw;
+        line-height: 6vw;
+    }
+    
+    .textbody p {
+        font-size: 2.6vw;
+        line-height: 4.7vw;
+    }
+
+    hr {
+        margin: 50px 48px 50px;
+    }
+
+    .clients {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 40px 1fr;
+    }
+
+    .clients ul:nth-child(2) {
+        grid-row: 2 / 4;
+        grid-column: 1 / 2;
+        line-height: 160%;
+    }
+    
+    .clients ul:nth-child(3) {
+        grid-row: 2 / 4;
+        grid-column: 2 / 3;
+        line-height: 160%;
+    }
+
+    footer {
+        margin-left: 48px;
+        margin-right: 50px;
+    }
+
+    .left {
+        font-size: 5vw;
+    }
+  
+}
+
+/* Special width just for the damn footer */
+@media (max-width: 860px) {
+    footer {
+        margin: 100px 45px 100px;  
+        height: 250px;
+        flex-direction: column;
+    }
+
+    .left {
+        font-size: 53px;
+    }
+
+    .right {
+        position: absolute;
+        text-align: left;
+        left: 0;
+    }
+
+    .right span:nth-child(n+6):nth-child(-n+9) {
+        margin-left: 0;
+        margin-right: 30px;
+    }
+
+    .slidef {
+        position: relative;
+        transform: translateY(90px);
+        opacity: 0;
+        transition: all 0.8s ease;
+    }
+
+    .slidef.active {
+        transform: translateY(0px);
+        opacity: 1;     
+    }
+}
+
+@media (max-width: 710px) {
+    header nav {
+        flex-basis: 1;
+        padding: 24px 17px 0;
+        font-size: 17px;
+    }
+
+    header nav div:nth-child(2) {
+        margin-left: 12px;
+    }
+
+    main {
+        padding: 0;
+        margin: 0;
+    }
+
+    .intro {
+        font-size: 6vw;
+        letter-spacing: 0px;
+        margin: 250px 20px 50px;
+    }
+
+    h1 div:nth-child(2) {
+        margin-top: -5px;
+    }
+
+    .textbody {
+        margin: 50px 25px 0;
+    }
+
+    .textbody h2 {
+        font-size: 4.9vw;
+        line-height: 6.5vw;
+    }
+    
+    .textbody p {
+        font-size: 3.7vw;
+        line-height: 5.7vw;
+    }
+
+    hr {
+        margin: 50px 22px 50px;
+    }
+
+    /* Width ensure the flex column size doesnt exceed the viewport and show a scroll bar */ 
+    .clients {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+
+    /* Collapse margins of the client list flexbox to show continuity */
+    .clients ul {
+        margin-top: -8px;
+    }
+
+    .clients ul:nth-child(3) {
+        margin-top: -22px;
+    }
+
+    #hidden {
+        height: 90px;
+    }
+    
+    #popup {
+        margin: 0;
+    }
+
+    #popup nav ul li:nth-child(1) {
+        display: none;
+    }
+
+    #popup nav ul li:nth-child(2) {
+        font-size: 25px;
+    }
+
+    #popup nav ul {
+        justify-content: center;
+        margin-top: 30px;
+        margin-left: 40px;
+        font-size: 300px;
+        font-weight: bold;
+        color: white;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .intro {
+        font-size: 25   px;
+        letter-spacing: 1px;
+        margin: 178px 40px 10px;
+    }
+
+    .textbody h2 {
+        font-size: 30px;;
+        line-height: 1.5;
+    }
+    
+    .textbody p {
+        font-size: 20px;
+        line-height: 1.7;
+    }
+
+    footer {
+        margin-top: 30px;
+        margin-left: 20px;
+        height: 230px;
+    }
+
+    .left {
+        font-size: 40px;
+    }
+
+    .right img:nth-child(n+2):nth-child(-n+5) {
+        width: 20px;
+        margin-left: 10px;
+    }
+
+    .right span:nth-child(n+6):nth-child(-n+9) {
+        font-size: medium;
+        margin-right: 15px;
+    }
+}

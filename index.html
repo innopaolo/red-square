@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Red Square -- The agency for what comes next.</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/circular-book">
+        <link rel="stylesheet" href="https://fontlibrary.org//face/youngserif" media="screen" type="text/css"/>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajas/jquery/3.6.0/jquery.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div id="red-box">
+                    <img src="./assets/redBox.png" alt="red box icon">
+                    <label>Red Square</label>
+                </div>
+                <div>
+                    Work <span>></span>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="intro">
+                <h1>
+                    <!-- Animation delay placed here for easier tweaking -->
+                    <div>
+                        <span>The</span>
+                        <span style="animation-delay: 0.4s;">agency</span>
+                        <span style="animation-delay: 0.8s;">for</span>
+                    </div>
+                    <div>
+                        <span style="animation-delay: 1.2s;">what</span>
+                        <span style="animation-delay: 1.6s;">comes</span>
+                        <span style="animation-delay: 2s;">next.</span>
+                    </div>
+                </h1>
+            </section>
+            <div id="introGIF">
+                <!-- Img name used in script selector document.gif.src to create a slideshow  -->
+               <img class="slideUP" name="gif" alt="series of project example pictures" />
+            </div> 
+            <div class="textbody">
+                <h2 class="slideUP">    
+                    We smash and bash, no fancy ideas or designs for us! We crush anything in our path. 
+                    Destruction is our art, and chaos is our anthem!
+                </h2>
+                <p class="slideUP">
+                    Red Square cares not for your fancy talk of brand strategy. We make war, not things that move markets or sell product. We crush our enemies and conquer all. We help great warlords create chaos and destruction!
+                </p>
+            </div>  
+            <hr class="slideways">
+            <div class="clients">
+                <ul>
+                    <span>Select Clients</span>
+                </ul>
+                <ul>        
+                    <!-- Sideways class will slide in from the left -->      
+                    <li class="slideways">Orcish Gambler's Den</li>
+                    <li class="slideways">Savage Scrollers</li>
+                    <li class="slideways">Fangwoods Casino</li>
+                    <li class="slideways">Gore-blend Nutritionals</li>
+                    <li class="slideways">Goblinkin's Knowledge Horde</li>
+                    <li class="slideways">Hard Rock Smashers</li>
+                    <li class="slideways">Hobbit Sports Smashers</li>
+                    <li class="slideways">Hobbit Hovels Worldwide</li>
+                    <li class="slideways">Orc Blood Brew</li>
+                </ul>
+                <ul>
+                    <li class="slideways">Necrocafé</li>
+                    <li class="slideways">New Orc Pride</li>
+                    <li class="slideways">Pillage-thon</li>
+                    <li class="slideways">Raging Rivers Casino</li>
+                    <li class="slideways">Snarlkers</li>
+                    <li class="slideways">Savage Comfort</li>
+                    <li class="slideways">The University of Uruk-hai</li>
+                    <li class="slideways">Tuskington</li>
+                    <li class="slideways">Wind Creek Hostility</li>
+                </ul>
+            </div>
+            <hr class="slideways">
+        </main>
+        <footer>
+            <div class="left slideUP slidef">
+                <span>Let's raid.</span>
+                <br>
+                <span>hi@rsq.com</span>
+            </div>
+            <div class="right slideUP slidef">
+                <img src="./assets/plusicon.png" alt="Nugs icon" />
+                <span>Nugs.</span>
+                <img src="./assets/instagram.jpg" alt="instagram icon" />
+                <img src="./assets/twitter.png" alt="twitter icon" />
+                <img src="./assets/linkedin.png" alt="linked in icon" />
+                <br>
+                <span>Mordor, MA</span>
+                <span>Isengard, IL</span>
+                <span>Thranduil, OK</span>
+            </div>
+        </footer>
+        <div id="hidden">
+            <div id="popup">
+                <img src="./assets/wp2.jpg" alt="popup box image" />
+                <nav>
+                    <ul>
+                        <li>All Projects</li>
+                        <li>Work ></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+            var i = 0 // Start point of the index for looping
+            var images = [];
+            var time = 800;
+
+            // List of images used for slideshow
+            images[0] = './assets/wp1.jpg';
+            images[1] = './assets/wp2.jpg';
+            images[2] = './assets/wp3.jpg';
+            images[3] = './assets/wp4.jpg';
+            images[4] = './assets/wp5.jpg';
+            images[5] = './assets/wp6.jpg';
+
+            // Slideshow gif function
+            function slideshow() {
+                document.gif.src = images[i]; // Using var i as start of index
+
+                // Loop infinitely
+                if (i < images.length - 1) {
+                    i++;
+                } else {
+                    i = 0;
+                }
+
+                // Speed of image shuffle
+                setTimeout("slideshow()", time);
+            }
+
+            // Load DOM before running script
+            window.onload = slideshow; 
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
